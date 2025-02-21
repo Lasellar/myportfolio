@@ -11,7 +11,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'lasellar.ddns.net',
-    # 'lasellar.ru',
+    'lasellar.ru',
     '176.113.82.148',
     # '127.0.0.1'
 ]
