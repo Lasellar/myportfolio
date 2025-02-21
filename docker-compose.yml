@@ -17,7 +17,7 @@ services:
     image: lasellar/portfolio_backend
     env_file: .env
     volumes:
-      - pf_static_volume:/backend_static
+      - pf_static_volume:/app/backend_static/
       - pf_media_volume:/app/media/
     depends_on:
       db:

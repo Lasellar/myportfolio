@@ -13,7 +13,7 @@ ALLOWED_HOSTS = [
     'lasellar.ddns.net',
     # 'lasellar.ru',
     '176.113.82.148',
-    '127.0.0.1'
+    # '127.0.0.1'
 ]
 
 INSTALLED_APPS = [
@@ -104,7 +104,7 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'backend_static/static'
+STATIC_ROOT = BASE_DIR / 'backend_static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -112,3 +112,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://lasellar.ddns.net",
+    "https://lasellar.ddns.net"
+]
