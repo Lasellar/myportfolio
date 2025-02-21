@@ -1,0 +1,7 @@
+.container span.badge.bg-success {
+    background-color: darkgreen !important;
+}
+
+.container span.badge.rounded-pill.bg-success.mb-2 {
+    background-color: darkgoldenrod !important;
+}
