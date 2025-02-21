@@ -10,8 +10,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'lasellar.ddns.ru',
-    'lasellar.ru',
+    'lasellar.ddns.net',
+    # 'lasellar.ru',
     '176.113.82.148',
     '127.0.0.1'
 ]
