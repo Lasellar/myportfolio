@@ -1,0 +1,48 @@
+{% load static %}
+<div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="d-flex align-items-start gap-3">
+        {% if project.project.image %}
+          <img src="{{ project.project.image.url }}"
+               width="150"
+               height="150"
+               class="rounded flex-shrink-0">
+        {% else %}
+          <img src="{% static 'img/noimage.jpg' %}"
+               width="150"
+               height="150"
+               class="rounded flex-shrink-0">
+        {% endif %}
+        <div class="row gap-1">
+          <div class="d-flex align-items-baseline gap-2">
+            <h3>
+              {{ project.project.title }}
+            </h3>
+            {% if project.project.is_commercial %}
+              <h5>
+                <span class="badge bg-success">Коммерческий</span>
+              </h5>
+            {% endif %}
+            {% if project.project.github %}
+              <a href="{{ project.project.github }}" class="text-dark fs-4">
+                <i class="bi-github"></i>
+              </a>
+            {% endif %}
+            {% if project.project.url %}
+              <a href="{{ project.project.url }}" class="text-dark fs-4">
+                <i class="bi bi-link-45deg"></i>
+              </a>
+            {% endif %}
+          </div>
+          <div>
+            {% for skill in project.skills %}
+              <span class="badge rounded-pill bg-success mb-2">{{ skill.title }}</span>
+            {% endfor %}
+          </div>
+          <text>{{ project.project.description }}</text>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Портфолио
+{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="text-center col-md-4">
+        <img src="{% static 'img/me.jpg' %}" width="300" height="370" class="rounded">
+      </div>
+      <div class="col-md-8 mb-4">
+        <h1>
+          Backend-разработчик
+        </h1>
+        <h4>Полушин Максим Игоревич</h4>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <text>Дата рождения: 15 октября 2001</text>
+          </li>
+          <li class="list-group-item">
+            <text>Город: Москва</text>
+          </li>
+          <li class="list-group-item">
+            <text>Гражданство: Россия</text>
+          </li>
+          <li class="list-group-item">
+            <text>Есть разрешение на работу: Россия</text>
+          </li>
+          <li class="list-group-item">
+            <text>Не готов к переезду, не готов к командировкам</text>
+          </li>
+        </ul>
+        <p></p>
+        <h5>
+          Опыт работы:
+          <span class="badge bg-success">{{ experience }}</span>
+        </h5>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+  <div class="container">
+    <div class="accordion border-0" id="projectsAccordion">
+      <div class="accordion-item border-0">
+        <h1 class="accordion-header">
+          <button class="accordion-button collapsed fs-1 border-0 py-2"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#projectsContent"
+                  aria-expanded="false"
+                  aria-controls="projectsContent">
+            Мои проекты
+          </button>
+        </h1>
+        <div id="projectsContent"
+           class="accordion-collapse collapse border-0"
+           data-bs-parent="#projectsAccordion">
+          <div class="accordion-body p-0 pt-1">
+            <div class="d-flex flex-column gap-1">
+              {% for project in projects %}
+                {% if forloop.first %}
+                  <p></p>
+                {% endif %}
+                {% include "includes/project.html" %}
+                {% if not forloop.last %}
+                  <hr>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <div class="container">
+    <div class="accordion border-0" id="employersAccordion">
+      <div class="accordion-item border-0">
+        <h1 class="accordion-header">
+          <button class="accordion-button collapsed fs-1 border-0 py-2"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#employersContent"
+                  aria-expanded="false"
+                  aria-controls="employersContent">
+            С кем я работал
+          </button>
+        </h1>
+        <div id="employersContent"
+           class="accordion-collapse collapse border-0"
+           data-bs-parent="#employersAccordion">
+          <div class="accordion-body p-0 pt-1">
+            <div class="d-flex flex-column gap-1">
+              {% for employer in employers %}
+                {% if forloop.first %}
+                  <p></p>
+                {% endif %}
+                {% include "includes/employer.html" %}
+                {% if not forloop.last %}
+                  <hr>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <h3>Мой стек:</h3>
+  <h5>
+    {% for skill in skills %}
+      <span class="badge rounded-pill bg-success">{{ skill.title }}</span>
+    {% endfor %}
+  </h5>
+  {% include "includes/toast.html" %}
+{% endblock %}
