@@ -103,9 +103,6 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
 STATIC_ROOT = BASE_DIR / 'backend_static/static'
 
 MEDIA_URL = '/media/'
