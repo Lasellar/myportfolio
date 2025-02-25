@@ -8,6 +8,7 @@ load_dotenv()
 SECRET_KEY = os.environ.get('SECRET_KEY')
 SITE_ADDRESS = os.environ.get('SITE_ADDRESS')
 SERVER_IP = os.environ.get('SERVER_IP')
+DATAFILES_DIR = BASE_DIR / 'data'
 
 
 DEBUG = False
