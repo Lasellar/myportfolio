@@ -1,13 +1,4 @@
 {% extends "includes/error.html" %}
-{% block content %}
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col text-center">
-        <h1 class="error-code">500</h1>
-        <p class="error-message">
-          Упс! Ошибка сервера!
-        </p>
-      </div>
-    </div>
-  </div>
-{% endblock %}
+{% block title %}Ошибка сервера{% endblock %}
+{% block errorcode %}500{% endblock %}
+{% block errormessage %}Упс! Ошибка сервера!{% endblock %}

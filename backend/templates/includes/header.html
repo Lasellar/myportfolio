@@ -11,9 +11,6 @@
         <li class="nav-item me-3">
           <a class="nav-link {% if view_name == 'main:about-me' %} active {% endif %}" href="{% url 'main:about-me' %}">Обо мне</a>
         </li>
-        <li class="nav-item me-3">
-          <a class="nav-link {% if view_name == 'main:my-hobbies' %} active {% endif %}" href="{% url 'main:my-hobbies' %}">Мои хобби</a>
-        </li>
         {% endwith %}
       </ul>
     </div>

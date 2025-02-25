@@ -6,14 +6,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv()
 SECRET_KEY = os.environ.get('SECRET_KEY')
+SITE_ADDRESS = os.environ.get('SITE_ADDRESS')
+SERVER_IP = os.environ.get('SERVER_IP')
 
-DEBUG = True
+
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    'lasellar.ddns.net',
-    'lasellar.ru',
-    '176.113.82.148',
-    # '127.0.0.1'
+    SITE_ADDRESS,
+    SERVER_IP,
+    '127.0.0.1'
 ]
 
 INSTALLED_APPS = [
@@ -64,7 +66,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
-    'default': {
+    'default1': {
         'ENGINE': 'django.db.backends.postgresql',
         'USER': os.getenv('POSTGRES_USER', '123123'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', '123123123'),
@@ -72,7 +74,7 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT', 5432),
         'NAME': os.getenv('POSTGRES_DB', '1231231')
     },
-    'default1': {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
@@ -114,7 +116,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_ALLOW_ALL = True
 
 
-CSRF_TRUSTED_ORIGINS = [
-    "http://lasellar.ddns.net",
-    "https://lasellar.ddns.net"
-]
+CSRF_TRUSTED_ORIGINS = (
+    f"http://{SITE_ADDRESS}",
+    f"https://{SITE_ADDRESS}"
+)

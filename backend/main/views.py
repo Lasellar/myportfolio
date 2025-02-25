@@ -32,8 +32,3 @@ def main_page(request):
 def about_page(request):
     template = 'main/about-me.html'
     return render(request, template)
-
-
-def hobbies_page(request):
-    template = 'main/hobbies.html'
-    return render(request, template)
