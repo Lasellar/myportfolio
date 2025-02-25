@@ -11,7 +11,7 @@ def main_page(request):
     projects = Project.objects.filter(is_published=True)
     skills = Skill.objects.filter(is_published=True)
     employers = Employer.objects.filter(is_published=True)
-    exp_from = datetime.datetime(year=2023, month=6, day=1)
+    exp_from = datetime.datetime(year=2023, month=2, day=1)
     exp_now = datetime.datetime.now()
     experience = get_exp(exp_from, exp_now)
     projects_list = []
