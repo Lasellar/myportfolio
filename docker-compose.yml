@@ -13,6 +13,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    restart: always
   backend:
     image: lasellar/portfolio_backend
     env_file: .env
@@ -22,6 +23,7 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    restart: always
   gateway:
     image: lasellar/portfolio_gateway
     env_file: .env
@@ -32,6 +34,7 @@ services:
       - 8080:80
     depends_on:
       - backend
+    restart: always
 
 networks:
   default:
